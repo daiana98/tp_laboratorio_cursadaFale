@@ -83,6 +83,7 @@ void validarMensajeAMostrar(int numUno,int numDos,float resDivision,int resFacto
 	{
 		printf("\n\tdivisión: %f",resDivision);
 	}
+
 	if(numDos < 0 && numUno < 0)
 	{
 		printf("\n\tNo se puede realizar el factorial de los numeros.");
@@ -91,7 +92,11 @@ void validarMensajeAMostrar(int numUno,int numDos,float resDivision,int resFacto
 		printf("\n\tNo se puede realizar el factorial del 1er número y el factorial del 2do número es: %d",resFactorialDos);
 	}else
 	{
-		printf("\n\tNo se puede realizar el factorial del 2do número y el factorial del 1er número es: %d",resFactorialUno);
+		if(numDos < 0){
+			printf("\n\tNo se puede realizar el factorial del 2do número y el factorial del 1er número es: %d",resFactorialUno);
+		}else{
+			printf("\n\tEl factorial del 1er número es: %d y el factorial del segundo numero es: %d",resFactorialUno,resFactorialDos);
+		}
 	}
 }
 int opSuma(int numUno,int numDos)
