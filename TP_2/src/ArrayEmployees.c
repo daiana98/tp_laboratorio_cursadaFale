@@ -10,6 +10,7 @@
 #define FULL 0//ESTA LLENO
 #define EMPTY 1//ESTA VACIO
 
+
 static int findFreeSpace(Employee* list, int len);
 static void sortAsc(Employee* list, int len);
 static void sortDesc(Employee* list, int len);
@@ -133,7 +134,7 @@ int printEmployees(Employee* list, int len)
 			if(list[i].isEmpty == FULL)
 			{
 				state = 0;
-				printf("%d\t %s\t %s\t %f\t %d\t /n",list[i].id, list[i].name, list[i].lastName, list[i].salary, list[i].sector);
+				printf("%d\t %s\t %s\t\t %.2f\t %d\t \n",list[i].id, list[i].name, list[i].lastName, list[i].salary, list[i].sector);
 			}
 		}
 	}
@@ -272,4 +273,23 @@ int allSalary(Employee* list, int len, float* tot)
 	return state;
 }
 
+int modifyEmployee(Employee* list, int len, int id, char name[],char lastName[],float salary,int sector)
+{
+	int state;
+	int position;
 
+	state = -1;
+
+	if(list != NULL && len>0)
+	{
+		position = findEmployeeById(list, len, id);
+		if (position != -1) {
+			state = 0;
+			strcpy(list[position].name, name);
+			strcpy(list[position].lastName, lastName);
+			list[position].salary = salary;
+			list[position].sector = sector;
+		}
+	}
+	return state;
+}

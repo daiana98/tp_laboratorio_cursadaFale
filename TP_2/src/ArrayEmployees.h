@@ -12,6 +12,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+#define CANT_TRY 3
+
 struct
 {
 	int id;
@@ -100,4 +102,5 @@ int cantEmployee(Employee* list, int len);
 int allSalary(Employee* list, int len, float* tot);
 int cantEmployeeUp(Employee* list, int len, float prom);
 int cantEmployee(Employee* list, int len);
+int modifyEmployee(Employee* list, int len, int id, char name[],char lastName[],float salary,int sector);
 #endif /* ARRAYEMPLOYEES_H_ */

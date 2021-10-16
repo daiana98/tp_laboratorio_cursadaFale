@@ -45,7 +45,7 @@ int reportsSalary(Employee* list, int len)
 			{
 				prom = totSalary/cantEmp;
 				cantEmpUp = cantEmployeeUp(list, len, prom);
-				printf("\n\tEl Total es %f\n\tEl promedio de los salarios es %f\n\tLos empleados que superan el salario promedio son %d", totSalary, prom, cantEmpUp);
+				printf("\n\tEl Total es %.2f\n\tEl promedio de los salarios es %.2f\n\tLos empleados que superan el salario promedio son %d", totSalary, prom, cantEmpUp);
 				state = 0;
 			}
 		}

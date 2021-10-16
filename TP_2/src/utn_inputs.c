@@ -321,13 +321,13 @@ int getEmployee(char name[], char lastName[], float* salary, int* sector)
 
 	status = -1;
 
-	if (utn_getText(name, 51, "Ingrese el nombre", "Error", 3) == 0)
+	if (utn_getText(name, 51, "Ingrese el nombre\n", "Error ", 3) == 0)
 	{
-		if (utn_getFloat(salary, "Ingrese el salario", "Error", 0, 1000000, 3) == 0)
+		if (utn_getText(lastName, 51, "Ingrese el apellido\n", "Error ", 3) == 0)
 		{
-			if (utn_getText(lastName, 51, "Ingrese el apellido", "Error", 3) == 0)
+			if (utn_getFloat(salary, "Ingrese el salario\n", "Error ", 0, 1000000000, 3) == 0)
 			{
-				if (utn_getNatu(sector, "Ingrese el sector", "Error", 1, 3) == 0)
+				if (utn_getNatu(sector, "Ingrese el sector\n", "Error ", 1, 3) == 0)
 				{
 					status = 0;
 				}
