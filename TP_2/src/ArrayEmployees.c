@@ -7,8 +7,7 @@
 
 #include "ArrayEmployees.h"
 
-#define FULL 0//ESTA LLENO
-#define EMPTY 1//ESTA VACIO
+
 
 
 static int findFreeSpace(Employee* list, int len);

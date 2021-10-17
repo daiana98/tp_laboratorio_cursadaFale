@@ -12,6 +12,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+#define FULL 0//ESTA LLENO
+#define EMPTY 1//ESTA VACIO
 #define CANT_TRY 3
 
 struct
@@ -86,21 +88,59 @@ int sortEmployees(Employee* list, int len, int order);
  *
  * \param list Employee*
  * \param length int
- * \return int
+ * \return int Return (-1) if Error [Invalid length or NULL pointer] - (0) if Ok
  *
  */
 int printEmployees(Employee* list, int length);
 
 /** \brief create a new id
  *
- * \return id
- *
+ * \return int
  */
 int getId(void);
 
+/** \brief calculate the number of employees array
+ *
+ * \param list Employee*
+ * \param length int
+ * \return int Return (-1) if Error [Invalid length or NULL pointer] - (>=0) if Ok
+ *
+ */
 int cantEmployee(Employee* list, int len);
+
+/** \brief calculates the total salary of the employees array
+ *
+ * \param list Employee*
+ * \param length int
+ * \param tot float*
+ * \return int Return (-1) if Error [Invalid length or NULL pointer] - (>=0) if Ok
+ *
+ */
 int allSalary(Employee* list, int len, float* tot);
+
+/** \brief calculates the number of employees with salary above average salary
+ *
+ * \param list Employee*
+ * \param length int
+ * \param prom float
+ * \return int Return (-1) if Error [Invalid length or NULL pointer] - (>=0) if Ok
+ *
+ */
 int cantEmployeeUp(Employee* list, int len, float prom);
-int cantEmployee(Employee* list, int len);
+
+/** \brief modify in an existing list of employees the values ​​received as parameters in the employee id
+ * \param list employee*
+ * \param len int
+ * \param id int
+ * \param name[] char
+ * \param lastName[] char
+ * \param salary float
+ * \param sector int
+ * \return int Return (-1) if Error [Invalid length or NULL pointer or without
+free space] - (0) if Ok
+ *
+ */
 int modifyEmployee(Employee* list, int len, int id, char name[],char lastName[],float salary,int sector);
+
+
 #endif /* ARRAYEMPLOYEES_H_ */
